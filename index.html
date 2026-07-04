@@ -4,30 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Ahmad Riandi</title>
+    <!-- Memanggil library ikon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%); padding: 20px; }
-        .profile-card { background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: center; width: 100%; max-width: 320px; transition: transform 0.3s; animation: fadeInUp 0.8s ease-out both; }
-        .profile-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; animation: popIn 0.8s ease-out 0.2s both; }
+        .profile-card { background: white; padding: 30px; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); text-align: center; width: 100%; max-width: 320px; }
+        .profile-img { width: 130px; height: 130px; border-radius: 50%; object-fit: cover; border: 5px solid #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 15px; }
         h1 { margin: 10px 0; font-size: 24px; color: #333; }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(25px) scale(0.96); }
-            to { opacity: 1; transform: translateY(0) scale(1); }
-        }
-        @keyframes popIn {
-            0% { opacity: 0; transform: scale(0.8); }
-            70% { transform: scale(1.05); }
-            100% { opacity: 1; transform: scale(1); }
-        }
         .bio-text { margin: 15px 0; font-size: 14px; color: #666; line-height: 1.5; }
         
-        /* Pengaturan Tombol di tengah */
         .btn-container { display: flex; flex-direction: column; align-items: center; gap: 10px; width: 100%; }
-        .btn { display: flex; align-items: center; justify-content: center; width: 85%; padding: 12px; text-decoration: none; color: white; border-radius: 50px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
+        .btn { display: flex; align-items: center; justify-content: center; gap: 10px; width: 85%; padding: 12px; text-decoration: none; color: white; border-radius: 50px; font-weight: bold; border: none; cursor: pointer; transition: 0.3s; }
         
         .btn-play { background-color: #333; }
         .btn-ig { background-color: #E1306C; }
-        .btn-wa { background-color: #25D366; }
         .btn-tt { background-color: #000; }
+        .btn-wa { background-color: #25D366; }
         .btn:hover { transform: scale(1.05); opacity: 0.9; }
     </style>
 </head>
@@ -46,10 +38,19 @@
         </div>
 
         <div class="btn-container">
-            <button id="playBtn" class="btn btn-play" onclick="togglePlay()">🎵 Putar Musik</button>
-            <a href="https://www.instagram.com/nestle_miloooo" class="btn btn-ig" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@76appel_01" class="btn btn-tt" target="_blank">TikTok</a>
-            <a href="https://wa.me/6285248565872" class="btn btn-wa" target="_blank">WhatsApp</a>
+            <button id="playBtn" class="btn btn-play" onclick="togglePlay()"><i class="fas fa-music"></i> Putar Musik</button>
+            
+            <a href="https://www.instagram.com/nestle_miloooo" class="btn btn-ig" target="_blank">
+                <i class="fab fa-instagram"></i> Instagram
+            </a>
+            
+            <a href="https://www.tiktok.com/@76appel_01" class="btn btn-tt" target="_blank">
+                <i class="fab fa-tiktok"></i> TikTok
+            </a>
+            
+            <a href="https://wa.me/6285248565872" class="btn btn-wa" target="_blank">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
         </div>
     </div>
 
@@ -59,10 +60,10 @@
             var btn = document.getElementById("playBtn");
             if (audio.paused) {
                 audio.play();
-                btn.innerHTML = "⏸️ Hentikan Musik";
+                btn.innerHTML = '<i class="fas fa-pause"></i> Hentikan Musik';
             } else {
                 audio.pause();
-                btn.innerHTML = "🎵 Putar Musik";
+                btn.innerHTML = '<i class="fas fa-music"></i> Putar Musik';
             }
         }
     </script>
